@@ -17,6 +17,11 @@ public class Calculator {
 	
 	private int total;
 	
+	
+	private String[] history = new String [200];
+	private int i = 1;
+	
+
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
 	}
@@ -40,7 +45,11 @@ public class Calculator {
 	
 	public void add (int value) {
 		
+		history[i] = ("+" + Integer.toString(value));//this is going to be converting the integer value to a string.
+		
+		
 		total = total += value;//this is adding the two values.
+		i++;
 		
 	}
 	/**
@@ -51,7 +60,11 @@ public class Calculator {
 	
 	public void subtract (int value) {
 		
+		history[i] = ("-" + Integer.toString(value));//this is going to be converting the integer value to a string.
+		
+		
 		total = total -= value;//this is subtracting the two values.
+		i++;
 		
 	}
 	/**
@@ -62,7 +75,11 @@ public class Calculator {
 	 */
 	
 	public void multiply (int value) {
+		
+		history[i] = ("*" + Integer.toString(value));//this is going to be converting the integer value to a string.
+		
 		total = total*value;// this is multiplying the values
+		i++;
 	}
 	/**
 	 * The divide function is going divide the total by the paramater value,
@@ -75,10 +92,11 @@ public class Calculator {
 		/**
 		 * this if statement here is going to checking to see if the the parameter is 
 		 * equal to zero
-		 * 
-		 * 
-		 * 
 		 */
+		
+		history[i] = ("/" + Integer.toString(value));//this is going to be converting the integer value to a string.
+		
+		i++;
 		if(value == 0) {
 			total = 0;
 		}else {
@@ -88,7 +106,22 @@ public class Calculator {
 	}
 	
 	public String getHistory () {
-		return "";
+		
+		
+		history[0] = "0";//this is setting the first element to 0
+        for (String element: history) {// this is going to be iterating through the array.
+        	
+        	if(element == null) {// this to prevent printing "nulls"
+        		break;
+        	}else {
+        		System.out.print(element);
+        		
+        	}
+            
+        }
+		
+		
+		return null;
 	}
 
 }
