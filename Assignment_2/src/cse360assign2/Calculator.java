@@ -40,6 +40,8 @@ public class Calculator {
 	
 	public void add (int value) {
 		
+		total = total += value;//this is adding the two values.
+		
 	}
 	/**
 	 * The function below is going to be subtracting the value from the total.
@@ -48,6 +50,8 @@ public class Calculator {
 	 */
 	
 	public void subtract (int value) {
+		
+		total = total -= value;//this is subtracting the two values.
 		
 	}
 	/**
@@ -58,7 +62,7 @@ public class Calculator {
 	 */
 	
 	public void multiply (int value) {
-		
+		total = total*value;// this is multiplying the values
 	}
 	/**
 	 * The divide function is going divide the total by the paramater value,
@@ -68,6 +72,18 @@ public class Calculator {
 	 */
 	
 	public void divide (int value) {
+		/**
+		 * this if statement here is going to checking to see if the the parameter is 
+		 * equal to zero
+		 * 
+		 * 
+		 * 
+		 */
+		if(value == 0) {
+			total = 0;
+		}else {
+			total = total/value;//this is going to be dividing the total by the paramater.
+		}
 		
 	}
 	
